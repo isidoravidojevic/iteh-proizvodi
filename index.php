@@ -12,6 +12,10 @@
 
 <body>
 
+    <?php
+    include 'editfrm.php';
+    ?>
+
 
     <table class="table table-bordered table-striped border border-3 border-primary" id="proizvoditabela">
         <thead class="table-primary border-primary">
@@ -22,6 +26,7 @@
                 <th>Merna Jedinica</th>
                 <th>Količina</th>
                 <th>Dobavljač</th>
+                <th></th>
             </tr>
         </thead>
 
@@ -40,13 +45,16 @@
                     <td><?php echo $p->merna_jedinica; ?></td>
                     <td><?php echo $p->kolicina; ?></td>
                     <td><?php echo $p->dob_naziv; ?></td>
-
+                    <td><button class="btn btn-dark" value="<?php echo $p->id; ?>" id="edit">EDIT</button></td>
                 </tr>
             <?php } ?>
         </tbody>
 
     </table>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
