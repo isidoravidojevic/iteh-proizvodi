@@ -1,6 +1,8 @@
 $(document).ready(function () {
     edit();
     update();
+    deleteProizvod();
+    searchProizvod();
 });
 
 
@@ -45,6 +47,48 @@ function update() {
             },
             success: function () {
                 location.reload()
+            }
+        });
+    })
+}
+
+
+
+
+function deleteProizvod() {
+
+    $(document).on('click', '#delete', function () {
+
+        alert($(this).val())
+
+        $.ajax({
+            url: 'delete.php',
+            method: 'POST',
+            data: {
+                proizvod_id: $(this).val(),
+            },
+            success: function () {
+                location.reload()
+            }
+        });
+    })
+}
+
+
+
+
+function deleteProizvod() {
+
+    $(document).on('keyup', '#nazivproizvodasearch', function () {
+
+        $.ajax({
+            url: 'search.php',
+            method: 'POST',
+            data: {
+                naziv_proizvoda: $(this).val(),
+            },
+            success: function (data) {
+                $('tbody').html(data)
             }
         });
     })
