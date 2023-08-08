@@ -59,8 +59,6 @@ function deleteProizvod() {
 
     $(document).on('click', '#delete', function () {
 
-        alert($(this).val())
-
         $.ajax({
             url: 'delete.php',
             method: 'POST',
