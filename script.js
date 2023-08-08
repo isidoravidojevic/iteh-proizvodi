@@ -77,7 +77,7 @@ function deleteProizvod() {
 
 
 
-function deleteProizvod() {
+function searchProizvod() {
 
     $(document).on('keyup', '#nazivproizvodasearch', function () {
 
